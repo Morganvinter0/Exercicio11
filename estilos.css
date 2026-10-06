@@ -1,0 +1,192 @@
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif
+}
+
+body {
+    background-color: #000000;
+}
+
+.container {
+    display: grid;
+    min-height: 100vh;
+    grid-template-areas:
+        "header" "header" "header"
+        "aside" "article" "sidebar"
+        "footer" "footer" "footer"
+}
+
+/* Header no topo */
+
+.meu-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 80px 0 50px;
+    z-index: 3;
+}
+
+/* Imagens */
+
+.img {
+    padding-bottom: 20px;
+}
+
+.background-banner {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-color: #121212;
+}
+
+.background-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100%;
+
+    background-image: url('./Imagens/Bem-vindo-1200w.png');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 30, rgba(0, 0, 0, 0) 100%);
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 30, rgba(0, 0, 0, 0) 100%);
+
+    display: flex;
+    z-index: 1;
+}
+
+.logo img {
+    filter: drop-shadow(2px 4px 12px rgba(0, 0, 0, 0.3));
+    align-items: flex-start;
+}
+
+/* Conteúdo */
+
+.conteudo-principal {
+    position: relative;
+    color: white;
+    text-align: center;
+    z-index: 2;
+}
+
+.menu-navegacao {
+    display: flex;
+    margin-bottom: 2vh;
+    margin-top: -2vh;
+}
+
+.menu-navegacao a {
+    font-size: 1.1em;
+    color: #ddfff1;
+    text-decoration: none;
+    margin-left: 35px;
+    font-weight: 500;
+    margin-top: 6.5vh;
+
+    /* Sombra */
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+    -webkit-text-stroke: 0.7px #000000;
+    paint-order: stroke fill;
+}
+
+/* Customização no texto */
+
+.caracteristicas {
+    color: #ffffff;
+    background-color: transparent;
+    display: flex;
+    padding-left: 10vw;
+    padding-bottom: -10em;
+    font-size: 1.5em;
+    position: relative;
+}
+
+.web-design:hover {
+    color: #6a0f9e;
+    cursor: pointer;
+}
+
+.criatividade:hover {
+    color: #6a0f9e;
+    cursor: pointer;
+}
+
+.inovacao:hover {
+    color: #6a0f9e;
+    cursor: pointer;
+}
+
+.sobre {
+    color: #a640e0;
+    margin-top: 2em;
+    margin-left: -15em;
+    margin-right: 10em;
+}
+
+.conteudo-banner {
+    color: #797979;
+    margin-top: 5em;
+}
+
+.sobre,
+.conteudo-banner {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 22px;
+    padding-right: 190px;
+    z-index: 2;
+    position: absolute;
+}
+
+select {
+    font-family: 'Times New Roman', Times, serif, 'Font Awesome 6 Free', 'Segoe UI', sans-serif;
+    background: transparent;
+    border: 0;
+    color: #ddfff1;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-left: 30px;
+    margin-top: 39px;
+    width: 110px;
+}
+
+option {
+    background-color: rgb(17, 17, 17);
+    color: #fff;
+    font-family: 'Times New Roman', Times, serif, 'Font Awesome 6 Free', 'Segoe UI', sans-serif;
+}
+
+.info-contato {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    margin-left: 40em;
+    padding-top: 13em;
+}
+
+.contatos {
+    position: absolute;
+    align-items: center;
+    margin-left: 69vw;
+    color: rgb(214, 174, 214);
+    margin-top: 14vw;
+    text-shadow:#000000, 0 5px 10px 0;
+}
+
+form {
+    
+}
