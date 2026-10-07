@@ -109,8 +109,8 @@ body {
     background-color: transparent;
     display: flex;
     padding-left: 10vw;
-    padding-bottom: -10em;
-    font-size: 1.5em;
+    padding-bottom: 15rem;
+    font-size: 1.1em;
     position: relative;
 }
 
@@ -129,27 +129,26 @@ body {
     cursor: pointer;
 }
 
-.sobre {
-    color: #a640e0;
-    margin-top: 2em;
-    margin-left: -15em;
-    margin-right: 10em;
-}
-
 .conteudo-banner {
     color: #797979;
-    margin-top: 5em;
+    margin-top: -11em;
+    margin-left: 90px;
 }
 
 .sobre,
 .conteudo-banner {
     max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 22px;
-    padding-right: 190px;
+    margin-left: 4em;
+    padding-left: 30px;
+    padding-right: 100px;
     z-index: 2;
     position: absolute;
+}
+
+.sobre {
+    color: #a640e0;
+    margin-top: -35vh;
+    margin-left: 11vw;
 }
 
 select {
@@ -171,22 +170,68 @@ option {
 }
 
 .info-contato {
+    position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
-    margin-left: 40em;
-    padding-top: 13em;
+    margin-left: -25px;
+    font-size: 13px;
+    margin-bottom: -10vw;
+    gap: 5px;
+    font-size: 11px;
+    color:#9c9c9c;
 }
 
 .contatos {
-    position: absolute;
-    align-items: center;
-    margin-left: 69vw;
-    color: rgb(214, 174, 214);
-    margin-top: 14vw;
+    position: relative;
+    text-align: start;
+    margin-left: 27px;
+    color: rgb(245, 224, 245);
+    margin-top: -1%;
     text-shadow:#000000, 0 5px 10px 0;
+    font-size: 1.1em;
 }
 
-form {
-    
+/* Formulário */
+
+.popover {
+    position: absolute;
+    display: inline-block;
+    margin-left: -150px;
+    margin-top: 30px;
+}
+
+.popover summary {
+    padding: 10px 15px;
+    background: transparent;
+    font-size: 1.1em;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    list-style: none;
+}
+
+.popover summary::-webkit-details-marker {
+    display: none;
+}
+
+.painel {
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+
+    width: 250px;
+    padding: 15px;
+
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.2);
+
+    z-index: 1000;
+}
+
+.painel input,
+.painel button {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
 }
