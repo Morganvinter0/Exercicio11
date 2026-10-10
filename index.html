@@ -4,46 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Criativa Web</title>
+
+    <!-- Apenas uma versão do Font Awesome (a 6.x já inclui os ícones fa-solid) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-    <!--Banner-->
-    <div class="background-banner">
-    <!--Cabeçalho-->
-        <header class="meu-header">
-            <img srcset="
-                Imagens\logo-600w.png 600w,
-                Imagens\logo-800w.png 800w,                Imagens\logo-1200w.png 1200w,
-                Imagens/logo-1800w.png 1800w,
-                "
-                sizes="(max-width: 600px) 40px,
-                (max-width: 800px) 50px,                (max-width: 1200px) 60px,
-                280px"
-                src="Imagens/logo-1800w.png">
 
-            <!--Navegação-->
-            <nav class="menu-navegacao">
-                <form>
-                    <details class="popover">
-                        <summary><i class="fa-solid fa-envelope"></i> Abrir Formulário</summary>
+    <!-- Banner -->
+    <div class="banner">
 
-                        <!--Formulário de Contato-->
-                        <div class="painel">
-                            <input type="text" placeholder="Insira seu nome" required>
-                            <input type="email" placeholder="Insira o e-mail comercial" required>
-                            <input type="text" placeholder="Qual seria sua necessidade?" required>
+        <!-- Cabeçalho -->
+        <header class="cabecalho">
+            <img class="logo"
+                 srcset="Imagens/logo-600w.png 600w,
+                         Imagens/logo-800w.png 800w,
+                         Imagens/logo-1200w.png 1200w"
+                 sizes="(max-width: 600px) 140px,
+                        (max-width: 1200px) 240px,
+                        320px"
+                 src="Imagens/logo-1800w.png"
+                 alt="Logo da Criativa Web">
 
-                            <button type="submit">Enviar</button>
-                        </div>
-                    </details>
-                </form>
+            <!-- Navegação -->
+            <nav class="navegacao" aria-label="Principal">
 
-                <a href="" class="menu"><i class="fa fa-bars"aria-hidden="true"></i> Menu</a>
-                <a href="" class="idioma"><i class='fas fa-globe'></i> Idioma</a>
+                <details class="suspenso" name="painel-nav">
+                    <summary>
+                        <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                        <span class="rotulo">Abrir formulário</span>
+                    </summary>
 
-                <select>
-                    <option class="servicos"  value="" selected disabled>&#xf0b1; Serviços</option>
+                    <form class="painel painel-formulario">
+                        <input type="text" name="nome" placeholder="Insira seu nome" required>
+                        <input type="email" name="email" placeholder="Insira o e-mail comercial" required>
+                        <input type="text" name="necessidade" placeholder="Qual seria sua necessidade?" required>
+                        <button type="submit">Enviar</button>
+                    </form>
+                </details>
+
+                <!-- Informações de contato -->
+                <details class="suspenso" name="painel-nav">
+                    <summary>
+                        <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                        <span class="rotulo">Contato</span>
+                    </summary>
+
+                    <div class="painel painel-contato">
+                        <h3>Telefone:<br>(xx)xxxxx-xxxx</h3>
+                        <h3>Endereço:<br>Rua X, 33 - SP, São Paulo</h3>
+                        <h3>E-mail:<br>agencia@criativaweb.com.br</h3>
+                    </div>
+                </details>
+
+                <a class="link-nav" href="#" aria-label="Menu">
+                    <i class="fa-solid fa-bars" aria-hidden="true"></i>
+                    <span class="rotulo">Menu</span>
+                </a>
+
+                <a class="link-nav" href="#" aria-label="Idioma">
+                    <i class="fa-solid fa-globe" aria-hidden="true"></i>
+                    <span class="rotulo">Idioma</span>
+                </a>
+
+                <label class="sr-only" for="servicos">Serviços</label>
+                <select class="servicos" id="servicos">
+                    <option value="" selected disabled>Serviços</option>
                     <option value="site">Criação de Site</option>
                     <option value="ecommerce">Loja virtual / E-commerce</option>
                     <option value="ui-ux">UI/UX Design</option>
@@ -52,43 +78,37 @@
             </nav>
         </header>
 
-            <!--Conteúdo Principal-->
-        <div class="conteudo-principal">
-        <main>
-            <div class="infos">
-            <section>
-                <article class="caracteristicas">
-                    <h1><span class="criatividade">Criatividade</span>
-                        <br>
-                        <span class="web-design">Web Design</span>
-                        <br>                            <span class="inovacao">Inovação</span></h1>
-                </article>
-            </div>
-            
-                <article class="comentarios">
-                        
-                </article>
+        <!-- Conteúdo principal -->
+        <main class="conteudo">
+
+            <h1 class="destaque">
+                <span class="criatividade">Criatividade</span>
+                <span class="web-design">Web Design</span>
+                <span class="inovacao">Inovação</span>
+            </h1>
+
+            <section class="sobre">
+                <h2>Sobre nós</h2>
+                <p>Criativa Web é uma agência especializada em design web, criando sites modernos, funcionais e personalizados. Unimos criatividade, tecnologia e experiência do usuário para desenvolver projetos que valorizam marcas e fortalecem sua presença digital.</p>
             </section>
+
+            <article class="comentario">
+                <img srcset="Imagens/usuario-600w.jpg 600w,
+                             Imagens/usuario-800w.jpg 800w,
+                             Imagens/usuario-1200w.jpg 1200w,
+                             Imagens/usuario-1800w.jpg 1800w"
+                     sizes="(max-width: 800px) 50px,
+                            (max-width: 1200px) 72px,
+                            75px"
+                     src="Imagens/usuario-1800w.jpg"
+                     alt="Foto do usuário">
+
+                <h3>@usuário_jk</h3>
+                <p>Eu simplesmente amei o resultado! Tudo no devido lugar. Perfeito!</p>
+            </article>
+
         </main>
-            
-        <!--Sidebar Sobre Nós-->
-        <sidebar>
-            <h2 class="sobre">Sobre nós</h2>
-                <div class="conteudo-banner">
-                    <p>Criativa Web é uma agência especializada em design web, criando sites modernos, funcionais e personalizados. Unimos criatividade, tecnologia e experiência do usuário para desenvolver projetos que valorizam marcas e fortalecem sua presença digital.</p>
-                </div>
-            </sidebar>
-            
-        <aside>
-            <!--Informações de Contato-->
-            <h2 class="contatos"><i class='fas fa-phone'></i> Contato</h2><br>
-            <div class="info-contato">
-                <h3>Telefone:<br>(xx)xxxxx-xxxx</h3>
-                <h3>Endereço:<br>Rua X, 33 - SP, São Paulo</h3>
-                <h3>E-mail:<br>agencia@criativaweb.com.br</h3>
-            </div>
-        </aside>
-        </div>
     </div>
+
 </body>
 </html>

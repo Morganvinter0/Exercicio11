@@ -1,237 +1,328 @@
-/* CSS Reset */
-* {
+/* CSS RESET*/
+
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Times New Roman', Times, serif
 }
+
+/* Base */ 
 
 body {
-    background-color: #000000;
+    font-family: 'Times New Roman', Times, serif;
+    background: #121212;
+    color: #fff;
 }
 
-.container {
-    display: grid;
-    min-height: 100vh;
-    grid-template-areas:
-        "header" "header" "header"
-        "aside" "article" "sidebar"
-        "footer" "footer" "footer"
+img {
+    max-width: 100%;
+    display: block;
 }
 
-/* Header no topo */
-
-.meu-header {
+/* Texto só para leitores de tela */
+.sr-only {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 80px 0 50px;
-    z-index: 3;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
 }
 
-/* Imagens */
+/* Imagem de Fundo (BANNER) */
 
-.img {
-    padding-bottom: 20px;
-}
-
-.background-banner {
+.banner {
     position: relative;
-    width: 100%;
     min-height: 100vh;
     display: flex;
-    align-items: center;
-    background-color: #121212;
+    flex-direction: column;
+    background-color: #000000;
+    overflow: hidden;
 }
 
-.background-banner::before {
+.banner::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    min-height: 100%;
-
-    background-image: url('./Imagens/Bem-vindo-1200w.png');
+    inset: 0;
+    background-image: url('./Imagens/Bem-vindo-600w.png');
     background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-
-    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 30, rgba(0, 0, 0, 0) 100%);
-    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 30, rgba(0, 0, 0, 0) 100%);
-
-    display: flex;
+    -webkit-mask-image: linear-gradient(to bottom, #000 30%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 30%, transparent 100%);
     z-index: 1;
 }
 
-.logo img {
+/* Cabeçalho */
+.cabecalho {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px 12px;
+    padding: 12px 16px;
+}
+
+.logo {
+    width: 120px;
+    height: auto;
     filter: drop-shadow(2px 4px 12px rgba(0, 0, 0, 0.3));
-    align-items: flex-start;
 }
 
-/* Conteúdo */
-
-.conteudo-principal {
-    position: relative;
-    color: white;
-    text-align: center;
-    z-index: 2;
-}
-
-.menu-navegacao {
+/* ---------- Navegação ---------- */
+.navegacao {
     display: flex;
-    margin-bottom: 2vh;
-    margin-top: -2vh;
-}
-
-.menu-navegacao a {
-    font-size: 1.1em;
-    color: #ddfff1;
-    text-decoration: none;
-    margin-left: 35px;
-    font-weight: 500;
-    margin-top: 6.5vh;
-
-    /* Sombra */
-    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
-    -webkit-text-stroke: 0.7px #000000;
-    paint-order: stroke fill;
-}
-
-/* Customização no texto */
-
-.caracteristicas {
-    color: #ffffff;
-    background-color: transparent;
-    display: flex;
-    padding-left: 10vw;
-    padding-bottom: 15rem;
-    font-size: 1.1em;
-    position: relative;
-}
-
-.web-design:hover {
-    color: #6a0f9e;
-    cursor: pointer;
-}
-
-.criatividade:hover {
-    color: #6a0f9e;
-    cursor: pointer;
-}
-
-.inovacao:hover {
-    color: #6a0f9e;
-    cursor: pointer;
-}
-
-.conteudo-banner {
-    color: #797979;
-    margin-top: -11em;
-    margin-left: 90px;
-}
-
-.sobre,
-.conteudo-banner {
-    max-width: 600px;
-    margin-left: 4em;
-    padding-left: 30px;
-    padding-right: 100px;
-    z-index: 2;
-    position: absolute;
-}
-
-.sobre {
-    color: #a640e0;
-    margin-top: -35vh;
-    margin-left: 11vw;
-}
-
-select {
-    font-family: 'Times New Roman', Times, serif, 'Font Awesome 6 Free', 'Segoe UI', sans-serif;
-    background: transparent;
-    border: 0;
-    color: #ddfff1;
-    font-weight: 600;
-    font-size: 1.1rem;
-    margin-left: 30px;
-    margin-top: 39px;
-    width: 110px;
-}
-
-option {
-    background-color: rgb(17, 17, 17);
+    align-items: center;
+    gap: 4px;
     color: #fff;
-    font-family: 'Times New Roman', Times, serif, 'Font Awesome 6 Free', 'Segoe UI', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
 }
 
-.info-contato {
-    position: relative;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    margin-left: -25px;
-    font-size: 13px;
-    margin-bottom: -10vw;
-    gap: 5px;
-    font-size: 11px;
-    color:#9c9c9c;
-}
-
-.contatos {
-    position: relative;
-    text-align: start;
-    margin-left: 27px;
-    color: rgb(245, 224, 245);
-    margin-top: -1%;
-    text-shadow:#000000, 0 5px 10px 0;
-    font-size: 1.1em;
-}
-
-/* Formulário */
-
-.popover {
-    position: absolute;
-    display: inline-block;
-    margin-left: -150px;
-    margin-top: 30px;
-}
-
-.popover summary {
-    padding: 10px 15px;
-    background: transparent;
-    font-size: 1.1em;
-    color: white;
-    cursor: pointer;
-    border-radius: 5px;
-    list-style: none;
-}
-
-.popover summary::-webkit-details-marker {
+.rotulo {
     display: none;
 }
 
-.painel {
-    position: absolute;
-    top: calc(100% + 5px);
-    left: 0;
-
-    width: 250px;
-    padding: 15px;
-
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0,0,0,.2);
-
-    z-index: 1000;
+.suspenso summary,
+.link-nav {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px;
+    border-radius: 10px;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    list-style: none;
+    text-shadow: 0 2px 6px #000;
 }
 
-.painel input,
-.painel button {
+.suspenso summary::-webkit-details-marker {
+    display: none;
+}
+
+.suspenso summary:hover,
+.link-nav:hover,
+.suspenso summary:focus-visible,
+.link-nav:focus-visible {
+    color: #a640e0;
+}
+
+.suspenso {
+    position: static;
+}
+
+/* ---------- Select de serviços ---------- */
+.servicos {
+    width: 80px;
+    padding: 5px;
+    border: 0;
+    border-radius: 10px;
+    background: transparent;
+    color: #fff;
+    font: inherit;
+    cursor: pointer;
+}
+
+.servicos option {
+    background-color: #111;
+    color: #fff;
+}
+
+/* ---------- Painéis (formulário e contato) ---------- */
+.painel {
+    position: absolute;
+    top: 100%;
+    left: 12px;
+    right: 12px;
+    z-index: 1000;
+    padding: 15px;
+    border-radius: 8px;
+    background: #1b1b1b;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.painel-formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.painel-formulario input,
+.painel-formulario button {
     width: 100%;
-    margin-bottom: 10px;
     padding: 8px;
+    border-radius: 4px;
+    font: inherit;
+}
+
+.painel-formulario input {
+    border: 1px solid #333;
+}
+
+.painel-formulario button {
+    border: 0;
+    background: #702297;
+    color: #fff;
+    cursor: pointer;
+}
+
+.painel-formulario button:hover {
+    background:  #6a0f9e;
+}
+
+.painel-contato {
+    display: grid;
+    gap: 12px;
+    color: #d1d1d1;
+    font-size: 0.8rem;
+}
+
+/* ==========================================================
+   5. CONTEÚDO PRINCIPAL
+   ========================================================== */
+.conteudo {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2.5rem;
+    padding: 2rem 16px 3rem;
+}
+
+/* ---------- Título ---------- */
+.destaque {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.0rem 4vw 2.6rem;
+    line-height: 1.2;
+}
+
+.destaque span:hover {
+    color: #6a0f9e;
+    cursor: pointer;
+}
+
+/* ---------- Sobre nós ---------- */
+.sobre {
+    max-width: 34ch;
+}
+
+.sobre h2 {
+    margin-bottom: 0.5rem;
+    color: #a640e0;
+    font-size: 1.1rem;
+}
+
+.sobre p {
+    color: #c1c1c1;;
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+/* ---------- Comentário do usuário ---------- */
+.comentario {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 12px;
+    align-items: center;
+    max-width: 34ch;
+}
+
+.comentario img {
+    grid-row: span 2;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.comentario h3 {
+    color: #8a52ab;
+    font-size: 0.8rem;
+}
+
+.comentario p {
+    color: #c1c1c1;
+    font-size: 0.8rem;
+}
+
+/* ==========================================================
+   6. TABLET E DESKTOP
+   ========================================================== */
+@media (min-width: 601px) {
+    .cabecalho {
+        padding: 10px 80px 0 50px;
+    }
+
+    .logo {
+        width: 240px;
+    }
+
+    .navegacao {
+        gap: 12px;
+    }
+
+    .rotulo {
+        display: inline;
+    }
+
+    .servicos {
+        width: 90px;
+    }
+
+    .painel {
+        left: auto;
+        right: 80px;
+        width: 320px;
+    }
+
+    .conteudo {
+        padding: 3rem 80px 4rem 50px;
+    }
+
+    .destaque {
+        font-size: 2.9rem;
+    }
+
+    .sobre h2 {
+        font-size: 1.4rem;
+    }
+
+    .sobre p,
+    .comentario p {
+        font-size: 1rem;
+    }
+
+    .comentario h3 {
+        font-size: 0.95rem;
+    }
+}
+
+@media (min-width: 1201px) {
+    .banner::before {
+        background-image: url('./Imagens/Bem-vindo-1200w.png');
+    }
+
+    .logo {
+        width: 320px;
+    }
+
+    .comentario img {
+        width: 72px;
+        height: 72px;
+    }
+}
+
+@media (min-width: 1801px) {
+    .banner::before {
+        background-image: url('./Imagens/Bem-vindo-1800w.png');
+    }
 }
